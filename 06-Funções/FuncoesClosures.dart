@@ -91,7 +91,77 @@ funcaoClosures() {
     print(objeto.substring(7));
   }
 
-  
+  /// HashMap 1
+
+  var novoObjeto1 = () {
+    //primeira função anônima
+    var id = 0;
+    var objetoCriado1 = (String nome, descricao) {
+      //segunda função anônima + formatação para return de um Map
+      return {id: (++id).toString().padLeft(2, '0'), 'nome': nome, 'descrição: ': descricao};
+    };
+    return objetoCriado1;
+  };
+
+  /// Criação do objeto
+  var objeto1 = novoObjeto1();
+  print(objeto1);
+
+  var listaObjetos1 = [objeto1('Lucas', 1.99)];
+  listaObjetos1.add(objeto1('Galaxy S9+', 3000.00));
+  listaObjetos1.add(objeto1('Fones', 199.00));
+
+  /// Utilizamos um for in para printar o conteúdo do array utilizando o print
+  /// da função closure, e utilizamos a função "substring" para formatar o texto
+  for (var objeto1 in listaObjetos1) {
+    /// Declaração de um HashMap, aqui declaramos a c, v como "chave" e "valor"
+    /// verificamos se v é um double e se for aplica o desconto de 10% se não
+    /// apenas é printado no terminal o valor
+    print(objeto1.map((c, v) => MapEntry(c, (v is double) ? '${descontarDez(v)}' : v)));
+  }
+
+  // HashMap 2
+  var novoObjeto2 = () {
+    //primeira função anônima
+    var id = 0;
+    var objetoCriado2 = (String nome, descricao) {
+      //segunda função anônima
+      return Objeto.fromMap({'id': (++id).toString().padLeft(2, '0'), 'nome': nome, 'descrição: ': descricao});
+    };
+    return objetoCriado2;
+  };
+
+  /// Criamos então um objeto recebendo a função "novoObjeto" e criamos um array
+  /// esse array recebe os parâmetros da funções closures acima incluindo o return
+  /// String que se torna o "objeto"
+  var objeto2 = novoObjeto2();
+  print(objeto2);
+
+  var listaObjetos2 = [objeto2('Lucas', 1.99)];
+  listaObjetos2.add(objeto2('Galaxy S9+', 3000.00));
+  listaObjetos2.add(objeto2('Fones', 199.00));
+
+  /// Utilizamos um for in para printar o conteúdo do array utilizando o print
+  /// da função closure, e utilizamos a função "substring" para formatar o texto
+  for (var objeto2 in listaObjetos2) {
+    //print(objeto2.map((c, v) => MapEntry(c, (v is double) ? '${descontarDez(v)}' : v)));
+    print((objeto2.descricao is num) ? descontarVinte(objeto2.descricao) : objeto2.descricao);
+  }
+}
+
+/// Declaração de um objeto
+class Objeto {
+  String? id, nome;
+  dynamic descricao;
+
+  /// Construtor do objeto
+  Objeto({this.id, this.nome, this.descricao});
+
+  /// Método Factory
+  factory Objeto.fromMap(Map<String, dynamic> map) {
+    /// Retorno de objeto como HashMap
+    return Objeto(id: map['id'].toString(), descricao: map['descricao']);
+  }
 }
 
 void main() {
