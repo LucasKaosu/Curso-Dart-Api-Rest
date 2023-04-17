@@ -7,6 +7,7 @@
   - Não podem ser instânciadas, servem como modelo
   - Métodos sem escopo devem ser sobrescritos nas classes herdeiras(filhas)
 */
+import 'Abelha.dart';
 import 'Cao.dart';
 
 void main() {
@@ -21,5 +22,19 @@ void main() {
     ..reproduzir()
     ..acao();
   print(cao);
-  print('${cao.nome} ${(cao.docil == true) ? 'Está amigável' : 'Não está amigável'}');
+  print('${cao.nome} ${(cao.docil == true) ? 'Está amigável' : 'Não está amigável'}\n');
+
+  //? Desafio: Criar uma classe Abelhas que herda de Artropodes com os construtores
+  //? (insetos, aracnideos e crustaceos) que herde de Animal no construtor Invertebrados!
+
+  var abelha = Abelha.domestico('Bee', 'Bee-Movie', 'Macho');
+  print('Nome: ${abelha.nome} Raça: ${abelha.raca} Sexo: ${abelha.sexo} Idade: ${abelha.idade} Docil: ${abelha.docil}');
+  print('Desenvolvimento: ${abelha.desenvolvimento} Tipo: ${(abelha.coluna == true) ? 'Vertebrado' : 'Invertebrado'}');
+  abelha
+    ..dormir()
+    ..alimentar()
+    ..reproduzir()
+    ..acao();
+  print(abelha);
+  print('${abelha.nome} ${(abelha.docil == true) ? 'Está amigável' : 'Não está amigável'}');
 }

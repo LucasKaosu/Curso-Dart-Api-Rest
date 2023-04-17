@@ -1,33 +1,33 @@
-import 'Mamiferos.dart';
+import 'Artropodes.dart';
 
-class Cao extends Mamiferos {
+class Abelha extends Artropodes {
   String? nome;
   String? raca;
 
-  Cao.domestico(this.nome, this.raca, String sexo, {String idade = 'indefinida', bool docil = true}) : super.placentarios(sexo, idade, docil: docil) {}
+  Abelha.domestico(this.nome, this.raca, String sexo, {String idade = 'indefinida', bool docil = true}) : super.insetos(sexo, idade, docil: docil) {}
 
-  Cao.selvagem(this.nome, this.raca, sexo, {idade = 'indefinida', docil = false}) : super.placentarios(sexo, idade, docil: docil) {
+  Abelha.selvagem(this.nome, this.raca, sexo, {idade = 'indefinida', docil = false}) : super.insetos(sexo, idade, docil: docil) {
     // exemplo que o dart aceita parametros sem tipagem
   }
 
   @override
   void dormir() {
-    print('Dorme como um cao!');
+    print('Dorme como um Abelha!');
   }
 
   // @override // é opicional, pois o dart identifica os métodos com o mesmo nome
   void alimentar() {
     super.alimentar();
-    print('cão!');
+    print('Abelha!');
   }
 
   @override // Métodos sem escopo em classes abstratas devem ser sobrescritos
   void reproduzir() {
-    print('Reproduz como um cão!');
+    print('Reproduz como um Abelha!');
   }
 
   void acao() {
-    print('Late como um cão!');
+    print('Voa como um Abelha!');
   }
 
   // Toda classe extends de Object, ao usar a funcao print a funcao toString retorna (Instance od 'Object')
