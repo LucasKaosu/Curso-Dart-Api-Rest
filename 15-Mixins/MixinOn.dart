@@ -26,7 +26,7 @@ mixin Cantor on Artista {
   }
 }
 
-class Dancarino {
+mixin Dancarino {
   void acao() {
     print('Dança');
   }

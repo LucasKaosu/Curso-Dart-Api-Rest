@@ -1,5 +1,4 @@
 import 'dart:collection';
-import 'dart:math';
 
 ///
 /// * Set é uma coleção de elementos únicos e ordenados entre chaves {}.

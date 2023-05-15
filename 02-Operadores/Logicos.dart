@@ -9,10 +9,13 @@ void main() {
   bool falso = !true;
   print('Verdadeiro = $verdadeiro Falso = $falso');
   print('Operador (!) !true = ${!true} !false ${!false}');
+  // ignore: dead_code
   bool teste1 = verdadeiro || verdadeiro;
+  // ignore: dead_code
   bool teste2 = verdadeiro || falso;
   bool teste3 = falso || falso;
   print('Operador (||) ${teste1} - ${teste2} - ${teste3}');
+  // ignore: dead_code
   print('Operador (&&) ${true && true} - ${true && false} - ${false && false}');
   bool operacao = (1 <= 2) && (3 > 2);
   print(operacao);

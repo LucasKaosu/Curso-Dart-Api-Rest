@@ -1,5 +1,3 @@
-import 'dart:html';
-
 void main() {
   print('03.2) Switch\n');
 

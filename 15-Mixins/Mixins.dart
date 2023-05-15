@@ -47,7 +47,7 @@ mixin Elegivel on Cidadao {
   void prestacaoContas();
 }
 
-abstract class Conta {
+mixin class Conta {
   double _saldo = 0;
   double salario = 33000;
 

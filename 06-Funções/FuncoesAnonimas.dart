@@ -1,5 +1,3 @@
-import 'dart:async';
-
 funcoesAnonimas() {
   print('06.4.0) Funções Anônimas Conceito\n');
 
