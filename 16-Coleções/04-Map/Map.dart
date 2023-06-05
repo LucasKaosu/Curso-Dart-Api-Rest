@@ -4,6 +4,8 @@
 ///   - As chaves são únicas, e os valores não se repetem!
 ///
 
+// ignore_for_file: unused_local_variable
+
 linkedHashMap() {
   print('16.4.0) LinkedHashMap == Map\n');
 
@@ -190,11 +192,9 @@ reduceMap() {
 
 ///
 ///* Conceito
-/// - 
+/// -
 
-objetosMap(){
-   
-}
+objetosMap() {}
 
 main() {
   linkedHashMap();
