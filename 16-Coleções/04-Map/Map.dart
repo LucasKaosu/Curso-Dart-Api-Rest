@@ -139,12 +139,12 @@ whereMap() {
     {'nome': 'Ellen', 'idade': 15}
   ];
   List<Map<String, dynamic>> maiores = pessoas.where((element) => element['idade'] >= 18).toList();
-  Map<String?, dynamic?> comecaComL = pessoas.firstWhere((element) => element['nome'].startsWith('L'), orElse: () => {'nome': 'Null', 'idade': null});
-  Map<String?, dynamic?> menores = pessoas.singleWhere((element) => element['idade'] < 18);
+  Map<String?, dynamic> comecaComL = pessoas.firstWhere((element) => element['nome'].startsWith('L'), orElse: () => {'nome': 'Null', 'idade': null});
+  Map<String?, dynamic> menores = pessoas.singleWhere((element) => element['idade'] < 18);
   final dynamic idades = (e) => e['idade'];
   final dynamic soma = (p, c) => p + c;
   var media = (pessoas.map(idades).reduce(soma)) / pessoas.length;
-  print('Menores: $menores \nMaiores: $maiores\nMédia idades: $media \nNomes com L: ${comecaComL ?? 'Nenhum'}');
+  print('Menores: $menores \nMaiores: $maiores\nMédia idades: $media \nNomes com L: ${comecaComL}');
 }
 
 ///
@@ -189,6 +189,7 @@ reduceMap() {
   Map<String, dynamic> funcionario = selecionados.reduce(funcMenorSalario);
   print('Funcionário: ${funcionario['nome']} salário: ${funcionario['salario']}');
 }
+
 main() {
   linkedHashMap();
   mapMap();
