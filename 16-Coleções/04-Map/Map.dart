@@ -189,13 +189,6 @@ reduceMap() {
   Map<String, dynamic> funcionario = selecionados.reduce(funcMenorSalario);
   print('Funcionário: ${funcionario['nome']} salário: ${funcionario['salario']}');
 }
-
-///
-///* Conceito
-/// -
-
-objetosMap() {}
-
 main() {
   linkedHashMap();
   mapMap();
