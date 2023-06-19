@@ -62,7 +62,7 @@ caso4() {
   try {
     int resultado = 1 ~/ 0;
     print('Resultado: $resultado');
-  } catch (e, s) {
+  } catch (e) {
     print('Exceção: $e');
   } finally {
     print('Finally: Com ou sem exceção "finally" será executado!');
@@ -78,7 +78,7 @@ caso5() {
     if (resultado.isInfinite) throw Exception('A variável valorB deve ser != 0');
 
     print('Resultado: $resultado');
-  } catch (e, s) {
+  } catch (e) {
     print('Exceção: $e');
   }
 }
